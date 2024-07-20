@@ -41,14 +41,16 @@ const LaunchMode = ({
 
 export default function Home() {
   const [anonAadhaar] = useAnonAadhaar();
-  const { setIsTestMode } = useContext(AppContext);
+  const { setIsTestMode, setLoggedIn } = useContext(AppContext);
   const { isConnected, address } = useAccount();
   const { open } = useWeb3Modal();
   const router = useRouter();
 
   useEffect(() => {
     if (anonAadhaar.status === "logged-in") {
-      router.push("./vote");
+      console.log("***yo anonAadhar: ***", anonAadhaar);
+      setLoggedIn(true);
+      router.push("./loggedIn");
     }
   }, [anonAadhaar, router]);
 
