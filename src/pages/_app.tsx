@@ -72,10 +72,10 @@ export default function App({ Component, pageProps }: AppProps) {
                     <Header />
                     <Component {...pageProps} />
                   </div>
-                  <Footer
+                  {/* <Footer
                     isDisplayed={isDisplayed}
                     setIsDisplayed={setIsDisplayed}
-                  />
+                  /> */}
                 </div>
               </AnonAadhaarProvider>
             </QueryClientProvider>

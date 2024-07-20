@@ -28,8 +28,8 @@ const LaunchMode = ({
           borderWidth: "1px",
           boxShadow: "none",
           fontWeight: 500,
-          borderColor: "#009A08",
-          color: "#009A08",
+          borderColor: "#000",
+          color: "#000",
           fontFamily: "rajdhani",
         }}
         buttonTitle={isTest ? "USE TEST CREDENTIALS" : "USE REAL CREDENTIALS"}
@@ -54,18 +54,14 @@ export default function Home() {
 
   return (
     <>
-      <main className="flex flex-col min-h-[75vh] mx-auto justify-center items-center w-full p-4">
-        <div className="max-w-4xl w-full">
-          <h6 className="text-[36px] font-rajdhani font-medium leading-none">
-            ANON AADHAAR
-          </h6>
-          <h2 className="text-[90px] font-rajdhani font-medium leading-none">
-            EXAMPLE VOTING APP
-          </h2>
-          <div className="text-md mt-4 mb-8 text-[#717686]">
-            This process ensures anonymity by utilizing the Aadhaar secure QR
-            code (present on e-Aadhaar and the printed Aadhaar letter) which
-            preserves the confidentiality of the Aadhaar number.
+      <main className="flex min-h-[75vh] mx-auto justify-between items-center w-full p-8">
+        <div className="min-w-[60%]">
+          <div className="leading-[90px] font-rajdhani">
+            <div className="text-[90px]">Hacker House</div>
+            <div className="text-[120px] font-medium">Goa</div>
+          </div>
+          <div className="text-lg mt-4 mb-8 capitialize">
+            A sample of our work that should get us through the screening...
           </div>
 
           <div className="flex w-full gap-8 mb-8">
@@ -77,21 +73,26 @@ export default function Home() {
                     setIsTestMode={setIsTestMode}
                     address={address as string}
                   />
-                  <LaunchMode
+                  {/* <LaunchMode
                     isTest={true}
                     setIsTestMode={setIsTestMode}
                     address={address as string}
-                  />
+                  /> */}
                 </div>
               </div>
             ) : (
               <button
-                className="bg-[#009A08] rounded-lg text-white px-6 py-1 font-rajdhani font-medium"
+                className="bg-[#000] rounded-lg text-white px-6 py-1 font-rajdhani font-medium"
                 onClick={() => open()}
               >
                 CONNECT WALLET
               </button>
             )}
+          </div>
+        </div>
+        <div>
+          <div>
+            <img src="header_image.jpg" />
           </div>
         </div>
       </main>

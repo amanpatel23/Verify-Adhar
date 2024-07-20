@@ -15,32 +15,30 @@ export const Header: FunctionComponent = () => {
   return (
     <header className="flex flex-row justify-between">
       <div className="flex flex-row items-center mx-5">
-        <Image
-          priority
-          src={aaLogo}
-          width={40}
-          height={40}
-          alt="Follow us on Twitter"
-        />
+        <div className="">
+          <span className="text-6xl font-extralight">D</span>
+          <span className="text-3xl font-light">ev</span>
+          <span className="text-6xl font-extralight">S</span>
+          <span className="text-3xl font-light">quare</span>
+        </div>
       </div>
       <div className="flex flex-row gap-3 items-center justify-end">
         <div className="flex m-5 items-center space-x-2">
           {isConnected ? (
             <button
-              className="bg-[#EDFFED] rounded-lg text-[#009A08] px-6 py-1 border-2 border-[#009A08] font-rajdhani font-medium"
+              className="rounded-lg text-[#000] px-6 py-1 border-2 border-[#000] font-rajdhani font-medium"
               onClick={() => open()}
             >
               {address && shortenAddress(address)}
             </button>
           ) : (
             <button
-              className="bg-[#009A08] rounded-lg text-white px-6 py-1 font-rajdhani font-medium"
+              className="bg-[#000] rounded-lg text-white px-6 py-1 font-rajdhani font-medium"
               onClick={() => open()}
             >
               CONNECT WALLET
             </button>
           )}
-          {/* {isConnected && <Web3NetworkSwitch />} */}
         </div>
       </div>
     </header>
