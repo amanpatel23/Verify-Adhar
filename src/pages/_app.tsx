@@ -22,6 +22,8 @@ export const AppContext = createContext({
   useTestAadhaar: false,
   setIsTestMode: (isTest: boolean) => {},
   setVoted: (voted: boolean) => {},
+  setLoggedIn: (loggedIn: boolean) => {},
+  loggedIn: false,
 });
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -29,6 +31,7 @@ export default function App({ Component, pageProps }: AppProps) {
   const [ready, setReady] = useState(false);
   const [isTestMode, setIsTestMode] = useState<boolean>(true);
   const [voted, setVoted] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(false);
 
   useEffect(() => {
     setReady(true);
@@ -62,6 +65,8 @@ export default function App({ Component, pageProps }: AppProps) {
             useTestAadhaar: isTestMode,
             setIsTestMode: setIsTestMode,
             setVoted: setVoted,
+            setLoggedIn: setLoggedIn,
+            loggedIn: loggedIn,
           }}
         >
           <WagmiProvider config={wagmiConfig}>
@@ -72,10 +77,10 @@ export default function App({ Component, pageProps }: AppProps) {
                     <Header />
                     <Component {...pageProps} />
                   </div>
-                  <Footer
+                  {/* <Footer
                     isDisplayed={isDisplayed}
                     setIsDisplayed={setIsDisplayed}
-                  />
+                  /> */}
                 </div>
               </AnonAadhaarProvider>
             </QueryClientProvider>
